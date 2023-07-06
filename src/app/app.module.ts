@@ -21,7 +21,7 @@ import { FooterComponent } from './footer/footer.component';
     ContactoComponent,
     QuinesSomosComponent,
     ServiciosComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule],
   providers: [],
