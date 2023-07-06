@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("le di click");
     this.loginService.login(this.correoElectronico, this.contrasena)
       .subscribe({
         next: response => {
@@ -25,7 +24,7 @@ export class LoginComponent implements OnInit {
         },
         error: error => {
           // Ocurrió un error durante el inicio de sesión
-          console.error('Error durante el inicio de sesión:', error);
+          console.error('Contraseña incorrecta. Error durante el inicio de sesión:', error);
         }
       });
   }
