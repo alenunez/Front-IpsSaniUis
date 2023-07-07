@@ -20,6 +20,9 @@ import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeMedicoComponent } from './home-medico/home-medico.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -34,11 +37,13 @@ import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
     HomeAdminComponent,
     MenuComponent,
     HomeMedicoComponent,
-    HomeUsuarioComponent
+    HomeUsuarioComponent,
+    AdminUsuariosComponent,
+    UsuarioFormModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule,    BrowserAnimationsModule,
     MatSidenavModule,
-    MatIconModule, CommonModule,MatListModule],
+    MatIconModule, CommonModule,MatListModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],
 })

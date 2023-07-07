@@ -1,0 +1,52 @@
+/* lista-usuarios.component.css */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tr:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .bg-color {
+    background-color: #348D1B;
+  };
+  colText{
+    color: white;
+  };
+  .banner-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .banner h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  

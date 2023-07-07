@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -8,6 +8,8 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { HomeMedicoComponent } from './home-medico/home-medico.component';
 import { HomeUsuarioComponent } from './home-usuario/home-usuario.component';
+import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.component';
+import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-modal.component';
 
 
 
@@ -22,7 +24,9 @@ const routes: Routes = [  {
 { path: 'servicios', component: ServiciosComponent },
 {path: 'homeAdmin', component:HomeAdminComponent},
 {path: 'homeMedico', component:HomeMedicoComponent},
-{path: 'homeUsuario', component:HomeUsuarioComponent}];
+{path: 'homeUsuario', component:HomeUsuarioComponent},
+{path: 'adminUsuario' ,component:AdminUsuariosComponent},
+{path: 'crearUsuario' ,component:UsuarioFormModalComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
