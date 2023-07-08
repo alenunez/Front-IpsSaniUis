@@ -1,0 +1,16 @@
+.contact-container {
+    padding: 20px;
+  }
+  
+  .contact-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  .contact-container .list-group-item {
+    border: none;
+    padding: 5px;
+  }
+  
+  .contact-container p {
+    margin-bottom: 10px;
+  }
