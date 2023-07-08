@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
+import { Usuario } from '../Modelos/Usuario.model';
 
 @Component({
   selector: 'app-login',
@@ -17,28 +18,30 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.loginService.login(this.correoElectronico, this.contrasena).subscribe({
-      next: (response) => {
-        // El inicio de sesión fue exitoso, hacer algo con la respuesta
-        console.log('Inicio de sesión exitoso:', response);
-        if (response === 4) {
+      next: (usuario: Usuario) => {
+        // El inicio de sesión fue exitoso, hacer algo con el usuario
+        console.log('Inicio de sesión exitoso:', usuario);
+        if (usuario.idRol === 4) {
           // Redirigir al componente deseado para el rol 1
           this.router.navigate(['/homeAdmin']); 
-        };
-        if (response ===3) {
+        }
+        else if (usuario.idRol === 3) {
           // Redirigir al componente deseado para el rol 2
           this.router.navigate(['/homeMedico']); 
-        };
-        if (response === 1) {
+
+        }
+        else if (usuario.idRol === 1) {
           // Redirigir al componente deseado para el rol 3
           this.router.navigate(['/homeUsuario']); 
         }
+        localStorage.setItem("idRol",usuario.idRol.toString())
+        localStorage.setItem("idUsuario",usuario.idUsuario.toString())
+
+
       },
       error: (error) => {
         // Ocurrió un error durante el inicio de sesión
-        console.error(
-          'Contraseña incorrecta. Error durante el inicio de sesión:',
-          error
-        );
+        console.error('Error durante el inicio de sesión:', error);
       },
     });
   }
