@@ -40,9 +40,9 @@ const routes: Routes = [  {
 {path: 'medicoCitas' ,component:MedicoCitasComponent},
 {path: 'adminEspecialidad', component:AdminEspecialidadComponent},
 {path: 'adminEnfermedad', component:AdminEnfermedadComponent},
-{path: 'marcaMedicamento', component:AdminMarcaMedicamentoComponent},
-{path: 'tipoMedicamento', component:AdminTipoMedicamentoComponent},
-{path: 'medicamento', component:AdminMedicamentoComponent}
+{path: 'adminMarcaMedicamento', component:AdminMarcaMedicamentoComponent},
+{path: 'adminTipoMedicamento', component:AdminTipoMedicamentoComponent},
+{path: 'adminMedicamento', component:AdminMedicamentoComponent}
 ];
 
 @NgModule({
