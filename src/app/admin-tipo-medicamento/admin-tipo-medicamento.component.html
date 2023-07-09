@@ -3,8 +3,7 @@
       <h1>Clínica IPS SaniUis</h1>
     </div>
   </div>
-  
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-color">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -13,7 +12,7 @@
                 </a>
                 <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                     <li class="nav-item">
-                        <a href="/adminUsuario" class="nav-link align-middle px-0">
+                        <a href="#" class="nav-link align-middle px-0">
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Usuarios</span>
                         </a>
                     </li>
@@ -22,15 +21,15 @@
                             <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Medicamentos</span> </a>
                         <ul class="collapse show nav flex-column ms-1" id="submenu1" data-bs-parent="#menu">
                             <li class="w-100">
-                                <a href="/tipoMedicamento" class="nav-link px-0"> <span class="d-none d-sm-inline">Tipos</span> 1 </a>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Roles</span> 1 </a>
                             </li>
                             <li>
-                                <a href="/marcaMedicamento" class="nav-link px-0"> <span class="d-none d-sm-inline">Marcas</span> 2 </a>
+                                <a href="#" class="nav-link px-0"> <span class="d-none d-sm-inline">Marcas</span> 2 </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="/adminEspecialidad" class="nav-link px-0 align-middle">
+                        <a href="#" class="nav-link px-0 align-middle">
                             <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Especialidades</span></a>
                     </li>
                     <li>
@@ -87,7 +86,24 @@
             </div>
         </div>
         <div class="col py-3">
-            Content area...
+          <button (click)="abrirModalCrearTipoMedicamento()">Crear tipo medicamento</button>
+  
+          <table>
+              <thead>
+                <tr>
+                  <th>Descripcion</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let tipoMedicamento of tipoMedicamento">
+                  <td>{{ tipoMedicamento.descripcion }}</td>
+                  <button (click)="abrirModalEditarTipoMedicamento(tipoMedicamento)">Editar</button>
+          <button (click)="eliminarTipoMedicamento(tipoMedicamento)">Eliminar</button>
+          
+                </tr>
+              </tbody>
+            </table>
         </div>
     </div>
-</div>
+  </div>
