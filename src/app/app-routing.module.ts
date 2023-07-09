@@ -12,6 +12,7 @@ import { AdminUsuariosComponent } from './admin-usuarios/admin-usuarios.componen
 import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-modal.component';
 import { UsuarioCitasComponent } from './usuario-citas/usuario-citas.component';
 import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.component';
+import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
 
 
 
@@ -30,7 +31,8 @@ const routes: Routes = [  {
 {path: 'adminUsuario' ,component:AdminUsuariosComponent},
 {path: 'crearUsuario' ,component:UsuarioFormModalComponent},
 {path: 'usuarioCitas' ,component:UsuarioCitasComponent},
-{path: 'crearCita' ,component:CitaFormModalComponent}
+{path: 'crearCita' ,component:CitaFormModalComponent},
+{path: 'medicoCitas' ,component:MedicoCitasComponent}
 ];
 
 @NgModule({

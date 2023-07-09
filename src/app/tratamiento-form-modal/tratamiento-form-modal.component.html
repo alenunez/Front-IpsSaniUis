@@ -1,0 +1,20 @@
+<div class="modal-body">
+    <!-- Aquí va el contenido del formulario -->
+    <form (ngSubmit)="guardar()" #tratamientoForm="ngForm">
+      <!-- Campos del formulario -->
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" [(ngModel)]="tratamiento.descripcion" name="descripcion" required>
+      </div>
+  
+      <!-- Campo oculto para el idCitaMedica -->
+      <input type="hidden" name="idCitaMedica" [value]="tratamiento.idCitaMedica">
+  
+      <!-- Botones -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+  

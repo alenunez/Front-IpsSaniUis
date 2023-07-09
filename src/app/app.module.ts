@@ -25,6 +25,9 @@ import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-mod
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsuarioCitasComponent } from './usuario-citas/usuario-citas.component';
 import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.component';
+import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
+import { DiagnosticoFormModalComponent } from './diagnostico-form-modal/diagnostico-form-modal.component';
+import { TratamientoFormModalComponent } from './tratamiento-form-modal/tratamiento-form-modal.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.compon
     AdminUsuariosComponent,
     UsuarioFormModalComponent,
     UsuarioCitasComponent,
-    CitaFormModalComponent
+    CitaFormModalComponent,
+    MedicoCitasComponent,
+    DiagnosticoFormModalComponent,
+    TratamientoFormModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule,    BrowserAnimationsModule,
     MatSidenavModule,

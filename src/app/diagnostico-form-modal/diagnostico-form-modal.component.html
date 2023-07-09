@@ -1,0 +1,32 @@
+<div class="modal-body">
+  <!-- Aquí va el contenido del formulario -->
+  <form (ngSubmit)="guardar()" #diagnosticoForm="ngForm">
+    <!-- Campos del formulario -->
+    <div class="form-group">
+      <label for="descripcion">Descripción</label>
+      <input type="text" class="form-control" id="descripcion" [(ngModel)]="diagnostico.comentario" name="descripcion" required>
+    </div>
+    <div class="form-group">
+      <label for="enfermedad">Enfermedad</label>
+      <select class="form-control" id="enfermedad" [(ngModel)]="diagnostico.idEnfermedad" name="enfermedad" required>
+        <option value="">Seleccione una enfermedad</option>
+        <option *ngFor="let enfermedad of enfermedades" [value]="enfermedad.idEnfermedad">{{ enfermedad.descripcion }}</option>
+      </select>
+    </div>
+    <!-- Campo oculto para el idCitaMedica -->
+    <input type="hidden" name="idCitaMedica" [value]="diagnostico.idCitaMedica">
+
+    <!-- Mostrar el diagnóstico existente si existe -->
+    <div *ngIf="diagnosticoExistente">
+      <h5>Diagnóstico existente:</h5>
+      <p>Comentario: {{ diagnosticoExistente.comentario }}</p>
+      <p>Enfermedad: {{ diagnosticoExistente.idEnfermedad }}</p>
+    </div>
+
+    <!-- Botones -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+  </form>
+</div>
