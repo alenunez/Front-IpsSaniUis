@@ -1,0 +1,25 @@
+.bg-color {
+    background-color: #348D1B;
+  };
+  colText{
+    color: white;
+  };
+  .banner-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .banner {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .banner h1 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  
+  

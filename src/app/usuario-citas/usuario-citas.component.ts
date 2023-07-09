@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioserviceService } from '../usuarioservice.service'; 
 import { CitaMedica } from '../Modelos/CitaMedica.model'; 
-import { UsuarioFormModalComponent } from '../usuario-form-modal/usuario-form-modal.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CitaFormModalComponent } from '../cita-form-modal/cita-form-modal.component';
 
