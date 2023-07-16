@@ -1,8 +1,9 @@
 <div class="banner-container">
-    <div class="banner">
-      <h1>Clínica IPS SaniUis</h1>
-    </div>
+  <div class="banner">
+    <img class="banner-image" src="../../assets/Logo-UIS-75.png" alt="Imagen del banner" width="150px">
+    <h1>Clínica IPS SaniUis</h1>
   </div>
+</div>
   <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-color">
@@ -53,6 +54,7 @@
               <th>Apellido paciente</th>
               <th>Fecha</th>
               <th>Hora</th>  
+              <th>Ver</th>
 
             </tr>
           </thead>
@@ -62,10 +64,17 @@
               <td>{{ usuario.primerApellidoUsuario }}</td>
               <td>{{ usuario.fechaCita }}</td>
               <td>{{ usuario.horaCita }}</td>
-              <button  (click)="abrirModalCrearTratamiento(usuario)">
-                Tratamiento
-              </button>     
-              <button (click)="abrirModalDiagnostico(usuario)">Diagnóstico</button>
+
+
+              <td>
+                <div class="button-container">
+                  <button  (click)="abrirModalCrearTratamiento(usuario)">
+                    Tratamiento
+                  </button>     
+                  <button (click)="abrirModalDiagnostico(usuario)">Diagnóstico</button>
+
+                </div>
+              </td>
 
 
               

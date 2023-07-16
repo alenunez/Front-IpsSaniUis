@@ -3,4 +3,5 @@ export interface Diagnostico {
     comentario: string;
     idCitaMedica: number;
     idEnfermedad: number;
+    descripcionEnfermedad:string
   }

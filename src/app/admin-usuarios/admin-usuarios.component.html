@@ -1,5 +1,6 @@
 <div class="banner-container">
   <div class="banner">
+    <img class="banner-image" src="../../assets/Logo-UIS-75.png" alt="Imagen del banner" width="150px">
     <h1>Clínica IPS SaniUis</h1>
   </div>
 </div>
@@ -7,8 +8,8 @@
   <div class="row flex-nowrap">
     <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-color">
         <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-            <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <span class="fs-5 d-none d-sm-inline">Menu</span>
+          <a href="/homeAdmin" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <span class="fs-5 d-none d-sm-inline">Menu</span>
             </a>
             <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
                 <li class="nav-item">
@@ -26,6 +27,9 @@
                         <li>
                             <a href="/adminMarcaMedicamento" class="nav-link px-0"> <span class="d-none d-sm-inline colText">Marcas</span></a>
                         </li>
+                        <li>
+                          <a href="/adminMedicamento" class="nav-link px-0"> <span class="d-none d-sm-inline colText">Medicamento</span></a>
+                      </li>
                     </ul>
                 </li>
                 <li>
@@ -49,7 +53,7 @@
         </div>
     </div>
       <div class="col py-3">
-        <button (click)="abrirModalCrearUsuario()">Crear usuario</button>
+        <button class="create-button" (click)="abrirModalCrearUsuario()">Crear usuario</button>
 
         <table>
             <thead>
@@ -71,8 +75,12 @@
                 <td>{{ usuario.documentoIdentidad }}</td>
                 <td>{{ usuario.correoElectronico }}</td>
                 <td>{{ usuario.descripcionRol }}</td>
-                <button (click)="abrirModalEditarUsuario(usuario)">Editar</button>
-        <button (click)="eliminarUsuario(usuario)">Eliminar</button>
+                <td>
+                  <div class="button-container">
+                    <button (click)="abrirModalEditarUsuario(usuario)">Editar</button>
+                    <button (click)="eliminarUsuario(usuario)">Eliminar</button>
+                  </div>
+                </td>
         
               </tr>
             </tbody>
