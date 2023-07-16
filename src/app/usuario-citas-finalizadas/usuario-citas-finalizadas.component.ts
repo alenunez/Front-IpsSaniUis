@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { CitaMedica } from '../Modelos/CitaMedica.model'; 
-import { MedicoServiceService } from '../medico-service.service'; 
+import { MedicoServiceService } from '../medico-service.service';
+import { CitaMedica } from '../Modelos/CitaMedica.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TratamientoFormModalComponent } from '../tratamiento-form-modal/tratamiento-form-modal.component';
 import { Tratamiento } from '../Modelos/Tratamiento.model';
 import { DiagnosticoFormModalComponent } from '../diagnostico-form-modal/diagnostico-form-modal.component';
 import { Diagnostico } from '../Modelos/Diagnostico.model';
+import { UsuarioFormModalComponent } from '../usuario-form-modal/usuario-form-modal.component';
+import { UsuarioserviceService } from '../usuarioservice.service';
 
 @Component({
-  selector: 'app-medico-citas',
-  templateUrl: './medico-citas.component.html',
-  styleUrls: ['./medico-citas.component.css']
+  selector: 'app-usuario-citas-finalizadas',
+  templateUrl: './usuario-citas-finalizadas.component.html',
+  styleUrls: ['./usuario-citas-finalizadas.component.css']
 })
-export class MedicoCitasComponent implements OnInit {
+export class UsuarioCitasFinalizadasComponent implements OnInit {
   citas: CitaMedica[] = [];
   tratamiento: Tratamiento[]=[];
   idCitaMedica: number=0; // Asegúrate de tener el valor de idCitaMedica disponible
@@ -24,7 +26,7 @@ export class MedicoCitasComponent implements OnInit {
 
   idUser: number = parseInt(localStorage.getItem("idUsuario") ?? "0", 10);
 
-  constructor(private backendService: MedicoServiceService, private modalService: NgbModal) { }
+  constructor(private backendService: MedicoServiceService, private modalService: NgbModal,private backendServiceUsuario: UsuarioserviceService) { }
 
   ngOnInit(): void {
     this.usuario = (localStorage.getItem("usuario"));
@@ -40,12 +42,20 @@ export class MedicoCitasComponent implements OnInit {
       location.href="/homeUsuario";
 
     }
-    this.obtenerCitas(); // Llama a la función para obtener la lista de usuarios
+    this.obtenerCitasFinalizadas(); // Llama a la función para obtener la lista de usuarios
     console.log(this.idUser)
   }
+  logout(){
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("Rol");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("idUsuario");
+    localStorage.removeItem("idRol");
+    location.href="/";
+  }
 
-  obtenerCitas() {
-    this.backendService.obtenerCitas(this.idUser).subscribe({
+  obtenerCitasFinalizadas() {
+    this.backendServiceUsuario.obtenerCitasFinalizadas(this.idUser).subscribe({
       next: (response: CitaMedica[]) => {
         this.citas = response; // Almacena la lista de citas en la variable
       },
@@ -103,24 +113,6 @@ export class MedicoCitasComponent implements OnInit {
     );
   }
 
-  abrirModalEditarCita(tratamiento: Tratamiento) {
-    const modalRef = this.modalService.open(TratamientoFormModalComponent);
-    modalRef.componentInstance.tratamiento = { ...tratamiento }; // Copiar la cita para evitar modificar la original
-
-    modalRef.componentInstance.guardarCita.subscribe((tratamiento: Tratamiento) => {
-      this.backendService.actualizarTratamiento(tratamiento).subscribe(
-        (response: Tratamiento) => {
-          console.log('tratamiento editada:', response);
-          // Actualiza la lista de citas después de editar
-          this.obtenerCitas();
-        },
-        (error: any) => {
-          console.error('tratamiento al editar la cita:', error);
-        }
-      );
-    });
-  }
-
   abrirModalDiagnostico(usuario: CitaMedica) {
     // Obtener el diagnóstico existente
     this.backendService.obtenerDiagnostico(usuario.idCitaMedica).subscribe(
@@ -170,39 +162,4 @@ export class MedicoCitasComponent implements OnInit {
     );
   }
 
-  finalizarCita(usuario: CitaMedica) {
-    this.backendService.finalizarCita(usuario).subscribe(
-      (response: CitaMedica) => {
-        console.log('Cita finalizada:', response);
-        // Actualiza la lista de citas después de finalizar
-        this.obtenerCitas();
-      },
-      (error: any) => {
-        console.error('Error al finalizar la cita:', error);
-      }
-    );
-  }
-  
-  cancelarCita(usuario: CitaMedica) {
-    this.backendService.cancelarCita(usuario).subscribe(
-      (response: CitaMedica) => {
-        console.log('Cita cancelada:', response);
-        // Actualiza la lista de citas después de cancelar
-        this.obtenerCitas();
-      },
-      (error: any) => {
-        console.error('Error al cancelar la cita:', error);
-      }
-    );
-  }
-
-  logout(){
-    localStorage.removeItem("usuario");
-    localStorage.removeItem("Rol");
-    localStorage.removeItem("usuario");
-    localStorage.removeItem("idUsuario");
-    localStorage.removeItem("idRol");
-    location.href="/";
-  }
-  
 }

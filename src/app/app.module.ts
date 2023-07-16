@@ -28,6 +28,8 @@ import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.compon
 import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
 import { DiagnosticoFormModalComponent } from './diagnostico-form-modal/diagnostico-form-modal.component';
 import { TratamientoFormModalComponent } from './tratamiento-form-modal/tratamiento-form-modal.component';
+import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
+import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
 
 
 @NgModule({
@@ -49,7 +51,9 @@ import { TratamientoFormModalComponent } from './tratamiento-form-modal/tratamie
     CitaFormModalComponent,
     MedicoCitasComponent,
     DiagnosticoFormModalComponent,
-    TratamientoFormModalComponent
+    TratamientoFormModalComponent,
+    MedicoCitasFinalizadasComponent,
+    UsuarioCitasFinalizadasComponent
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule,    BrowserAnimationsModule,
     MatSidenavModule,

@@ -13,6 +13,8 @@ import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-mod
 import { UsuarioCitasComponent } from './usuario-citas/usuario-citas.component';
 import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.component';
 import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
+import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
+import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
 
 
 
@@ -32,7 +34,10 @@ const routes: Routes = [  {
 {path: 'crearUsuario' ,component:UsuarioFormModalComponent},
 {path: 'usuarioCitas' ,component:UsuarioCitasComponent},
 {path: 'crearCita' ,component:CitaFormModalComponent},
-{path: 'medicoCitas' ,component:MedicoCitasComponent}
+{path: 'medicoCitas' ,component:MedicoCitasComponent},
+{path: 'medicoCitasFinalizadas' ,component:MedicoCitasFinalizadasComponent},
+{path: 'usuarioCitasFinalizadas' ,component:UsuarioCitasFinalizadasComponent}
+
 ];
 
 @NgModule({

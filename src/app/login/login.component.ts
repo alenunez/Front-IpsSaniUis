@@ -36,12 +36,17 @@ export class LoginComponent implements OnInit {
         }
         localStorage.setItem("idRol",usuario.idRol.toString())
         localStorage.setItem("idUsuario",usuario.idUsuario.toString())
+        localStorage.setItem("Rol",usuario.descripcionRol.toString())
+        localStorage.setItem("usuario", JSON.stringify(usuario)); 
+
+
 
 
       },
       error: (error) => {
         // Ocurrió un error durante el inicio de sesión
         console.error('Error durante el inicio de sesión:', error);
+        alert('Usuario o contraseña incorrecta')
       },
     });
   }

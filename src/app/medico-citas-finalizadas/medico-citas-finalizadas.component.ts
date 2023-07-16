@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CitaMedica } from '../Modelos/CitaMedica.model'; 
-import { MedicoServiceService } from '../medico-service.service'; 
+import { MedicoServiceService } from '../medico-service.service';
+import { CitaMedica } from '../Modelos/CitaMedica.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TratamientoFormModalComponent } from '../tratamiento-form-modal/tratamiento-form-modal.component';
 import { Tratamiento } from '../Modelos/Tratamiento.model';
@@ -8,11 +8,11 @@ import { DiagnosticoFormModalComponent } from '../diagnostico-form-modal/diagnos
 import { Diagnostico } from '../Modelos/Diagnostico.model';
 
 @Component({
-  selector: 'app-medico-citas',
-  templateUrl: './medico-citas.component.html',
-  styleUrls: ['./medico-citas.component.css']
+  selector: 'app-medico-citas-finalizadas',
+  templateUrl: './medico-citas-finalizadas.component.html',
+  styleUrls: ['./medico-citas-finalizadas.component.css']
 })
-export class MedicoCitasComponent implements OnInit {
+export class MedicoCitasFinalizadasComponent implements OnInit {
   citas: CitaMedica[] = [];
   tratamiento: Tratamiento[]=[];
   idCitaMedica: number=0; // Asegúrate de tener el valor de idCitaMedica disponible
@@ -21,7 +21,6 @@ export class MedicoCitasComponent implements OnInit {
   diagnosticoExistente: Diagnostico | null = null;
   usuario:any={};
   rol:any={};
-
   idUser: number = parseInt(localStorage.getItem("idUsuario") ?? "0", 10);
 
   constructor(private backendService: MedicoServiceService, private modalService: NgbModal) { }
@@ -40,12 +39,12 @@ export class MedicoCitasComponent implements OnInit {
       location.href="/homeUsuario";
 
     }
-    this.obtenerCitas(); // Llama a la función para obtener la lista de usuarios
+    this.obtenerCitasFinalizadas(); // Llama a la función para obtener la lista de usuarios
     console.log(this.idUser)
   }
 
-  obtenerCitas() {
-    this.backendService.obtenerCitas(this.idUser).subscribe({
+  obtenerCitasFinalizadas() {
+    this.backendService.obtenerCitasFinalizadas(this.idUser).subscribe({
       next: (response: CitaMedica[]) => {
         this.citas = response; // Almacena la lista de citas en la variable
       },
@@ -103,24 +102,6 @@ export class MedicoCitasComponent implements OnInit {
     );
   }
 
-  abrirModalEditarCita(tratamiento: Tratamiento) {
-    const modalRef = this.modalService.open(TratamientoFormModalComponent);
-    modalRef.componentInstance.tratamiento = { ...tratamiento }; // Copiar la cita para evitar modificar la original
-
-    modalRef.componentInstance.guardarCita.subscribe((tratamiento: Tratamiento) => {
-      this.backendService.actualizarTratamiento(tratamiento).subscribe(
-        (response: Tratamiento) => {
-          console.log('tratamiento editada:', response);
-          // Actualiza la lista de citas después de editar
-          this.obtenerCitas();
-        },
-        (error: any) => {
-          console.error('tratamiento al editar la cita:', error);
-        }
-      );
-    });
-  }
-
   abrirModalDiagnostico(usuario: CitaMedica) {
     // Obtener el diagnóstico existente
     this.backendService.obtenerDiagnostico(usuario.idCitaMedica).subscribe(
@@ -170,32 +151,6 @@ export class MedicoCitasComponent implements OnInit {
     );
   }
 
-  finalizarCita(usuario: CitaMedica) {
-    this.backendService.finalizarCita(usuario).subscribe(
-      (response: CitaMedica) => {
-        console.log('Cita finalizada:', response);
-        // Actualiza la lista de citas después de finalizar
-        this.obtenerCitas();
-      },
-      (error: any) => {
-        console.error('Error al finalizar la cita:', error);
-      }
-    );
-  }
-  
-  cancelarCita(usuario: CitaMedica) {
-    this.backendService.cancelarCita(usuario).subscribe(
-      (response: CitaMedica) => {
-        console.log('Cita cancelada:', response);
-        // Actualiza la lista de citas después de cancelar
-        this.obtenerCitas();
-      },
-      (error: any) => {
-        console.error('Error al cancelar la cita:', error);
-      }
-    );
-  }
-
   logout(){
     localStorage.removeItem("usuario");
     localStorage.removeItem("Rol");
@@ -204,5 +159,5 @@ export class MedicoCitasComponent implements OnInit {
     localStorage.removeItem("idRol");
     location.href="/";
   }
-  
+
 }

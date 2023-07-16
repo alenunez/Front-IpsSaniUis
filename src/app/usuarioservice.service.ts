@@ -19,6 +19,11 @@ export class UsuarioserviceService {
     return this.http.get<CitaMedica[]>(url);
   }
 
+  obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
+    const url = `http://localhost:8080/citaMedica/all/usuario/finalizada/id/${id}`; 
+    return this.http.get<CitaMedica[]>(url);
+  }
+
   eliminarCita(id: number): Observable<any> {
     const url = `http://localhost:8080/citaMedica/id/${id}`;
     return this.http.delete(url);
