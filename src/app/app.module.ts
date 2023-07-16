@@ -28,8 +28,16 @@ import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.compon
 import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
 import { DiagnosticoFormModalComponent } from './diagnostico-form-modal/diagnostico-form-modal.component';
 import { TratamientoFormModalComponent } from './tratamiento-form-modal/tratamiento-form-modal.component';
-import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
-import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
+import { AdminEspecialidadComponent } from './admin-especialidad/admin-especialidad.component';
+import { EspecialidadMedicaFormModalComponent } from './especialidad-medica-form-modal/especialidad-medica-form-modal.component';
+import { AdminEnfermedadComponent } from './admin-enfermedad/admin-enfermedad.component';
+import { EnfermedadFormModalComponent } from './enfermedad-form-modal/enfermedad-form-modal.component';
+import { AdminMarcaMedicamentoComponent } from './admin-marca-medicamento/admin-marca-medicamento.component';
+import { MarcaMedicamentoFormModalComponent } from './marca-medicamento-form-modal/marca-medicamento-form-modal.component';
+import { AdminTipoMedicamentoComponent } from './admin-tipo-medicamento/admin-tipo-medicamento.component';
+import { TipoMedicamentoFormModalComponent } from './tipo-medicamento-form-modal/tipo-medicamento-form-modal.component';
+import { AdminMedicamentoComponent } from './admin-medicamento/admin-medicamento.component';
+import { MedicamentoFormModalComponent } from './medicamento-form-modal/medicamento-form-modal.component';
 
 
 @NgModule({
@@ -52,8 +60,17 @@ import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/us
     MedicoCitasComponent,
     DiagnosticoFormModalComponent,
     TratamientoFormModalComponent,
-    MedicoCitasFinalizadasComponent,
-    UsuarioCitasFinalizadasComponent
+    AdminEspecialidadComponent,
+    EspecialidadMedicaFormModalComponent,
+    AdminEnfermedadComponent,
+    EnfermedadFormModalComponent,
+    AdminMarcaMedicamentoComponent,
+    MarcaMedicamentoFormModalComponent,
+    AdminTipoMedicamentoComponent,
+    TipoMedicamentoFormModalComponent,
+    AdminMedicamentoComponent,
+    MedicamentoFormModalComponent
+    
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule,    BrowserAnimationsModule,
     MatSidenavModule,

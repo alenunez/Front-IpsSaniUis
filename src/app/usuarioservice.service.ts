@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CitaMedica } from './Modelos/CitaMedica.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { EspecialidadMedicaDto } from './Modelos/EspecialidadMedica.model';
+import { EspecialidadMedica } from './Modelos/EspecialidadMedica.model';
 import { Usuario } from './Modelos/Usuario.model';
 import { Medico } from './Modelos/Medico.model';
 
@@ -16,11 +16,6 @@ export class UsuarioserviceService {
 
   obtenerCitas(id: number): Observable<CitaMedica[]> {
     const url = `http://localhost:8080/citaMedica/all/usuario/id/${id}`; 
-    return this.http.get<CitaMedica[]>(url);
-  }
-
-  obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
-    const url = `http://localhost:8080/citaMedica/all/usuario/finalizada/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
 
@@ -38,11 +33,10 @@ export class UsuarioserviceService {
     const url = `http://localhost:8080/usuario/id/${id}`; 
     return this.http.get<Usuario[]>(url);
   }
-
   
-  obtenerEspecialidad(): Observable<EspecialidadMedicaDto[]> {
+  obtenerEspecialidadMedica(): Observable<EspecialidadMedica[]> {
     const url = `http://localhost:8080/especialidadMedica/all`; 
-    return this.http.get<EspecialidadMedicaDto[]>(url);
+    return this.http.get<EspecialidadMedica[]>(url);
   }
 
   actualizarCita(citaMedica: CitaMedica): Observable<CitaMedica> {

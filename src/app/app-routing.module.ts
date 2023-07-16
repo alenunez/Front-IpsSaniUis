@@ -13,8 +13,11 @@ import { UsuarioFormModalComponent } from './usuario-form-modal/usuario-form-mod
 import { UsuarioCitasComponent } from './usuario-citas/usuario-citas.component';
 import { CitaFormModalComponent } from './cita-form-modal/cita-form-modal.component';
 import { MedicoCitasComponent } from './medico-citas/medico-citas.component';
-import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
-import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
+import { AdminEspecialidadComponent } from './admin-especialidad/admin-especialidad.component';
+import { AdminEnfermedadComponent } from './admin-enfermedad/admin-enfermedad.component';
+import { AdminMarcaMedicamentoComponent } from './admin-marca-medicamento/admin-marca-medicamento.component';
+import { AdminTipoMedicamentoComponent } from './admin-tipo-medicamento/admin-tipo-medicamento.component';
+import { AdminMedicamentoComponent } from './admin-medicamento/admin-medicamento.component';
 
 
 
@@ -35,9 +38,11 @@ const routes: Routes = [  {
 {path: 'usuarioCitas' ,component:UsuarioCitasComponent},
 {path: 'crearCita' ,component:CitaFormModalComponent},
 {path: 'medicoCitas' ,component:MedicoCitasComponent},
-{path: 'medicoCitasFinalizadas' ,component:MedicoCitasFinalizadasComponent},
-{path: 'usuarioCitasFinalizadas' ,component:UsuarioCitasFinalizadasComponent}
-
+{path: 'adminEspecialidad', component:AdminEspecialidadComponent},
+{path: 'adminEnfermedad', component:AdminEnfermedadComponent},
+{path: 'adminMarcaMedicamento', component:AdminMarcaMedicamentoComponent},
+{path: 'adminTipoMedicamento', component:AdminTipoMedicamentoComponent},
+{path: 'adminMedicamento', component:AdminMedicamentoComponent}
 ];
 
 @NgModule({
