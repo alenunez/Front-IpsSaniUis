@@ -1,5 +1,6 @@
 <div class="banner-container">
   <div class="banner">
+    <img class="banner-image" src="../../assets/Logo-UIS-75.png" alt="Imagen del banner" width="150px">
     <h1>Clínica IPS SaniUis</h1>
   </div>
 </div>
@@ -44,7 +45,7 @@
       </div>
   </div>
     <div class="col py-3">
-      <button (click)="abrirModalCrearCita()">Crear cita</button>
+      <button class="create-button" (click)="abrirModalCrearCita()">Crear cita</button>
 
       <table>
         <thead>
@@ -64,8 +65,12 @@
             <td>{{ usuario.fechaCita }}</td>
             <td>{{ usuario.horaCita }}</td>
 
-            <button (click)="abrirModalEditarCita(usuario)">Editar</button>
-            <button (click)="eliminarCita(usuario)">Eliminar</button>
+            <td>
+              <div class="button-container">
+                <button (click)="abrirModalEditarCita(usuario)">Editar</button>
+                <button (click)="eliminarCita(usuario)">Eliminar</button>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>

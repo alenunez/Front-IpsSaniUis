@@ -14,7 +14,8 @@ export class DiagnosticoFormModalComponent implements OnInit {
     idDiagnostico: 0,
     idCitaMedica: 0,
     idEnfermedad: 0,
-    comentario: ''
+    comentario: '',
+    descripcionEnfermedad:''
   };
   @Output() guardarDiagnostico = new EventEmitter<Diagnostico>();
   enfermedades: Enfermedad[] = [];
