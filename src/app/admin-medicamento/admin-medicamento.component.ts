@@ -12,14 +12,38 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class AdminMedicamentoComponent implements OnInit {
 
   medicamento: Medicamento[] = [];
+  usuario:any={};
+  rol:any={};
 
 
   constructor(private backendService: AdminServiceService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.usuario = (localStorage.getItem("usuario"));
+    this.rol =(sessionStorage.getItem("Rol"));
+    if(!this.usuario){
+      location.href="/";
+    }
+    else if(this.rol =="Administrador"){
+      location.href="/homeAdmin";
+
+    }
+    else if(this.rol =="Cliente"){
+      location.href="/homeUsuario";
+
+    }
     this.obtenerMedicamento(); // Llama a la función para obtener la lista de medicamentos
 
   }
+  logout(){
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("Rol");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("idUsuario");
+    localStorage.removeItem("idRol");
+    location.href="/";
+  }
+
 
   obtenerMedicamento() {
     this.backendService.obtenerMedicamento().subscribe(

@@ -1,10 +1,9 @@
 <div class="banner-container">
     <div class="banner">
-        <h1 class="colText">Clínica IPS SaniUis</h1>
+      <h1>Clínica IPS SaniUis</h1>
     </div>
-</div>
-
-<div class="container-fluid">
+  </div>
+  <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-color">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -23,29 +22,61 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Citas</span>
                         </a>
                     </li>
-
+    
                     <li>
                         <a href="/medicoCitasFinalizadas" class="nav-link px-0 align-middle colText">
                             <i class="fs-4 bi-table"></i>
                             <span class="ms-1 d-none d-sm-inline">Citas finalizadas</span>
                         </a>
                     </li>
-
+    
                     <li>
-                        <a href="#" (click)="logout()" class="nav-link px-0 align-middle colText">
-                            <i class="fs-4 bi-table"></i>
-                            <span class="ms-1 d-none d-sm-inline">Cerrar sesión</span>
-                        </a>
-                    </li>
-
-   
+                      <a href="#" (click)="logout()" class="nav-link px-0 align-middle colText">
+                          <i class="fs-4 bi-table"></i>
+                          <span class="ms-1 d-none d-sm-inline">Cerrar sesión</span>
+                      </a>
+                  </li>
+    
+    
+    
                 </ul>
                 <hr>
-
+    
             </div>
         </div>
-        <div class="col py-3">
-            Content area...
-        </div>
+      <div class="col py-3">
+  
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre paciente</th>
+              <th>Apellido paciente</th>
+              <th>Fecha</th>
+              <th>Hora</th>  
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of citas">
+              <td>{{ usuario.primerNombreUsuario }}</td>
+              <td>{{ usuario.primerApellidoUsuario }}</td>
+              <td>{{ usuario.fechaCita }}</td>
+              <td>{{ usuario.horaCita }}</td>
+              <button  (click)="abrirModalCrearTratamiento(usuario)">
+                Tratamiento
+              </button>     
+              <button (click)="abrirModalDiagnostico(usuario)">Diagnóstico</button>
+
+
+              
+
+
+  
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-</div>
+  </div>
+  

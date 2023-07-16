@@ -17,6 +17,10 @@ export class MedicoServiceService {
     const url = `http://localhost:8080/citaMedica/all/medico/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
+  obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
+    const url = `http://localhost:8080/citaMedica/all/medico/finalizada/id/${id}`; 
+    return this.http.get<CitaMedica[]>(url);
+  }
 
   actualizarTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
     const url = `http://localhost:8080/tratamiento/update`;
@@ -48,6 +52,17 @@ export class MedicoServiceService {
   crearDiagnostico(diagnostico: Diagnostico): Observable<Diagnostico> {
     const url = `http://localhost:8080/diagnostico/insert`;
     return this.http.post<Diagnostico>(url, diagnostico);
+  }
+
+  finalizarCita(citaMedica: CitaMedica): Observable<CitaMedica> {
+    const url = `http://localhost:8080/citaMedica/finalizar`;
+    return this.http.put<CitaMedica>(url, citaMedica);
+  }
+
+
+  cancelarCita(citaMedica: CitaMedica): Observable<CitaMedica> {
+    const url = `http://localhost:8080/citaMedica/cancelar`;
+    return this.http.put<CitaMedica>(url, citaMedica);
   }
   
 }

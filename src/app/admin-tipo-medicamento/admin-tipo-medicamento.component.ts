@@ -10,6 +10,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./admin-tipo-medicamento.component.css']
 })
 export class AdminTipoMedicamentoComponent implements OnInit {
+  usuario:any={};
+  rol:any={};
 
   tipoMedicamento: TipoMedicamento[] = [];
 
@@ -17,9 +19,31 @@ export class AdminTipoMedicamentoComponent implements OnInit {
   constructor(private backendService: AdminServiceService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.usuario = (localStorage.getItem("usuario"));
+    this.rol =(sessionStorage.getItem("Rol"));
+    if(!this.usuario){
+      location.href="/";
+    }
+    else if(this.rol =="Administrador"){
+      location.href="/homeAdmin";
+
+    }
+    else if(this.rol =="Cliente"){
+      location.href="/homeUsuario";
+
+    }
     this.obtenerTipoMedicamento(); // Llama a la función para obtener la lista de especialidades
 
   }
+  logout(){
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("Rol");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("idUsuario");
+    localStorage.removeItem("idRol");
+    location.href="/";
+  }
+
   
   obtenerTipoMedicamento() {
     this.backendService.obtenerTipoMedicamento().subscribe(

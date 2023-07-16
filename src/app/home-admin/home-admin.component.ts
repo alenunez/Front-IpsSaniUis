@@ -11,15 +11,35 @@ import { MatButtonModule } from '@angular/material/button';
 })
 
 export class HomeAdminComponent implements OnInit {
-  isMenuOpen = false;
 
-  toggleMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
+  usuario:any={};
+  rol:any={};
 
   constructor() { }
 
   ngOnInit(): void {
+    this.usuario = (localStorage.getItem("usuario"));
+    this.rol =(sessionStorage.getItem("Rol"));
+    if(!this.usuario){
+      location.href="/";
+    }
+    else if(this.rol =="Administrador"){
+      location.href="/homeAdmin";
+
+    }
+    else if(this.rol =="Cliente"){
+      location.href="/homeUsuario";
+
+    }
   }
+  logout(){
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("Rol");
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("idUsuario");
+    localStorage.removeItem("idRol");
+    location.href="/";
+  }
+
 
 }
