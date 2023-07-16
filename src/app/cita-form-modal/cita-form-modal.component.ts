@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CitaMedica } from '../Modelos/CitaMedica.model';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { UsuarioserviceService } from '../usuarioservice.service';
-import { EspecialidadMedicaDto } from '../Modelos/EspecialidadMedica.model';
+import { EspecialidadMedica } from '../Modelos/EspecialidadMedica.model';
 import { Medico } from '../Modelos/Medico.model';
 
 @Component({
@@ -26,7 +26,7 @@ export class CitaFormModalComponent implements OnInit {
     idMedico: 0
   };
   @Output() guardarCita = new EventEmitter<CitaMedica>();
-  especialidades: EspecialidadMedicaDto[] = [];
+  especialidades: EspecialidadMedica[] = [];
   medicos: Medico[] = [];
   selectedEspecialidad: number | undefined;
 
@@ -41,8 +41,8 @@ export class CitaFormModalComponent implements OnInit {
   }
 
   obtenerEspecialidades() {
-    this.usuarioService.obtenerEspecialidad().subscribe({
-      next: (response: EspecialidadMedicaDto[]) => {
+    this.usuarioService.obtenerEspecialidadMedica().subscribe({
+      next: (response: EspecialidadMedica[]) => {
         this.especialidades = response;
       },
       error: (error) => {

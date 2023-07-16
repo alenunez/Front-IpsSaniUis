@@ -1,4 +1,4 @@
-export interface EspecialidadMedicaDto {
+export interface EspecialidadMedica {
     idEspecialidadMedica: number;
     descripcion: string;
   }

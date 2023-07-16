@@ -18,6 +18,8 @@ import { AdminEnfermedadComponent } from './admin-enfermedad/admin-enfermedad.co
 import { AdminMarcaMedicamentoComponent } from './admin-marca-medicamento/admin-marca-medicamento.component';
 import { AdminTipoMedicamentoComponent } from './admin-tipo-medicamento/admin-tipo-medicamento.component';
 import { AdminMedicamentoComponent } from './admin-medicamento/admin-medicamento.component';
+import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
+import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
 
 
 
@@ -42,7 +44,9 @@ const routes: Routes = [  {
 {path: 'adminEnfermedad', component:AdminEnfermedadComponent},
 {path: 'adminMarcaMedicamento', component:AdminMarcaMedicamentoComponent},
 {path: 'adminTipoMedicamento', component:AdminTipoMedicamentoComponent},
-{path: 'adminMedicamento', component:AdminMedicamentoComponent}
+{path: 'adminMedicamento', component:AdminMedicamentoComponent},
+{path: 'medicoCitasFinalizadas' ,component:MedicoCitasFinalizadasComponent},
+{path: 'usuarioCitasFinalizadas' ,component:UsuarioCitasFinalizadasComponent}
 ];
 
 @NgModule({

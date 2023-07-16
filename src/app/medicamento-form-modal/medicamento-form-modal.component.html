@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-title">Crear/Editar Usuario</h4>
+    <button type="button" class="close" aria-label="Close" (click)="cancelar()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <!-- Aquí va el contenido del formulario -->
+    <form (ngSubmit)="guardar()" #medicamentoForm="ngForm">
+      <!-- Campos del formulario -->
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input type="text" class="form-control" id="descripcion" [(ngModel)]="medicamento.descripcion" name="descripcion" required>
+      </div>
+      <div class="form-group">
+        <label for="idTipoMedicamento">Tipo medicamento</label>
+        <select class="form-control" id="idTipoMedicamento" [(ngModel)]="medicamento.idTipoMedicamento" name="idTipoMedicamento" required>
+          <option *ngFor="let tipoMedicamento of tipoMedicamento" [value]="tipoMedicamento.idTipoMedicamento">{{ tipoMedicamento.descripcion }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="idMarcaMedicamento">Marca medicamento</label>
+        <select class="form-control" id="idMarcaMedicamento" [(ngModel)]="medicamento.idMarcaMedicamento" name="idMarcaMedicamento" required>
+          <option *ngFor="let marcaMedicamento of marcaMedicamento" [value]="marcaMedicamento.idMarcaMedicamento">{{ marcaMedicamento.descripcion }}</option>
+        </select>
+      </div>
+    
+      <!-- Botones -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
+    </form>
+  </div>
+  

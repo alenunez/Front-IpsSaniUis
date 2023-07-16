@@ -47,6 +47,10 @@ export class UsuarioserviceService {
     const url = `http://localhost:8080/citaMedica/insert`;
     return this.http.post<CitaMedica>(url, citaMedica);
   }
+  obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
+    const url = `http://localhost:8080/citaMedica/all/usuario/finalizada/id/${id}`; 
+    return this.http.get<CitaMedica[]>(url);
+  }
   
   
 }

@@ -3,8 +3,7 @@
       <h1>Clínica IPS SaniUis</h1>
     </div>
   </div>
-  
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="row flex-nowrap">
         <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-color">
             <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
@@ -50,7 +49,24 @@
             </div>
         </div>
         <div class="col py-3">
-            Content area...
+          <button (click)="abrirModalCrearEspecialidadMedica()">Crear especialidad medica</button>
+  
+          <table>
+              <thead>
+                <tr>
+                  <th>Descripcion</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let especialidadMedica of especialidadMedica">
+                  <td>{{ especialidadMedica.descripcion }}</td>
+                  <button (click)="abrirModalEditarEspecialidadMedica(especialidadMedica)">Editar</button>
+          <button (click)="eliminarEspecialidadMedica(especialidadMedica)">Eliminar</button>
+          
+                </tr>
+              </tbody>
+            </table>
         </div>
     </div>
-</div>
+  </div>

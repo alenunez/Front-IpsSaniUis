@@ -38,6 +38,8 @@ import { AdminTipoMedicamentoComponent } from './admin-tipo-medicamento/admin-ti
 import { TipoMedicamentoFormModalComponent } from './tipo-medicamento-form-modal/tipo-medicamento-form-modal.component';
 import { AdminMedicamentoComponent } from './admin-medicamento/admin-medicamento.component';
 import { MedicamentoFormModalComponent } from './medicamento-form-modal/medicamento-form-modal.component';
+import { MedicoCitasFinalizadasComponent } from './medico-citas-finalizadas/medico-citas-finalizadas.component';
+import { UsuarioCitasFinalizadasComponent } from './usuario-citas-finalizadas/usuario-citas-finalizadas.component';
 
 
 @NgModule({
@@ -69,7 +71,9 @@ import { MedicamentoFormModalComponent } from './medicamento-form-modal/medicame
     AdminTipoMedicamentoComponent,
     TipoMedicamentoFormModalComponent,
     AdminMedicamentoComponent,
-    MedicamentoFormModalComponent
+    MedicamentoFormModalComponent,
+    MedicoCitasFinalizadasComponent,
+    UsuarioCitasFinalizadasComponent
     
   ],
   imports: [BrowserModule, AppRoutingModule,FormsModule,HttpClientModule,    BrowserAnimationsModule,
