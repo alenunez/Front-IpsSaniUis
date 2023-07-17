@@ -1,3 +1,8 @@
-.slide-img img {
+.logo-img {
+  width: 150px; /* Ancho deseado en píxeles */
+  height: auto; /* Altura ajustada automáticamente */
+}
+
+.opacity-img {
   opacity: 0.8; /* Cambia la opacidad de la imagen */
 };
