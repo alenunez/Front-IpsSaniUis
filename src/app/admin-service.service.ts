@@ -17,121 +17,121 @@ export class AdminServiceService {
   constructor(private http: HttpClient) { }
 
   obtenerUsuarios(): Observable<Usuario[]> {
-    const url = 'http://localhost:8080/usuario/all'; // Reemplaza 'usuarios' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/usuario/all'; // Reemplaza 'usuarios' por la ruta correcta de tu endpoint
     return this.http.get<Usuario[]>(url);
   }
 
   eliminarUsuario(id: number): Observable<any> {
-    const url = `http://localhost:8080/usuario/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/usuario/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarUsuario(usuario: Usuario): Observable<Usuario> {
-    const url = `http://localhost:8080/usuario/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/usuario/update`;
     return this.http.put<Usuario>(url, usuario);
   }
   crearUsuario(usuario: Usuario): Observable<Usuario> {
-    const url = `http://localhost:8080/usuario/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/usuario/insert`;
     return this.http.post<Usuario>(url, usuario);
   }
 
   obtenerRoles(): Observable<Rol[]> {
-    const url = 'http://localhost:8080/rol/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/rol/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
     return this.http.get<Rol[]>(url);
   }
 
   obtenerEspecialidadMedica(): Observable<EspecialidadMedica[]> {
-    const url = 'http://localhost:8080/especialidadMedica/all';
+    const url = 'https://back-endipssaniuis-production.up.railway.app/especialidadMedica/all';
     return this.http.get<EspecialidadMedica[]>(url);
   }
 
   eliminarEspecialidadMedica(id: number): Observable<any> {
-    const url = `http://localhost:8080/especialidadMedica/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/especialidadMedica/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarEspecialidadMedica(especialidadMedica: EspecialidadMedica): Observable<EspecialidadMedica> {
-    const url = `http://localhost:8080/especialidadMedica/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/especialidadMedica/update`;
     return this.http.put<EspecialidadMedica>(url, especialidadMedica);
   }
   crearEspecialidadMedica(especialidadMedica: EspecialidadMedica): Observable<EspecialidadMedica> {
-    const url = `http://localhost:8080/especialidadMedica/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/especialidadMedica/insert`;
     return this.http.post<EspecialidadMedica>(url, especialidadMedica);
   }
 
   obtenerEnfermedad(): Observable<Enfermedad[]> {
-    const url = 'http://localhost:8080/enfermedad/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/enfermedad/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
     return this.http.get<Enfermedad[]>(url);
   }
 
   eliminarEnfermedad(id: number): Observable<any> {
-    const url = `http://localhost:8080/enfermedad/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/enfermedad/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarEnfermedad(enfermedad: Enfermedad): Observable<Enfermedad> {
-    const url = `http://localhost:8080/enfermedad/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/enfermedad/update`;
     return this.http.put<Enfermedad>(url, enfermedad);
   }
   crearEnfermedad(enfermedad: Enfermedad): Observable<Enfermedad> {
-    const url = `http://localhost:8080/enfermedad/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/enfermedad/insert`;
     return this.http.post<Enfermedad>(url, enfermedad);
   }
 
   obtenerMarcaMedicamento(): Observable<MarcaMedicamento[]> {
-    const url = 'http://localhost:8080/marcaMedicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/marcaMedicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
     return this.http.get<MarcaMedicamento[]>(url);
   }
   
   eliminarMarcaMedicamento(id: number): Observable<any> {
-    const url = `http://localhost:8080/marcaMedicamento/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/marcaMedicamento/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarMarcaMedicamento(marcaMedicamento: MarcaMedicamento): Observable<MarcaMedicamento> {
-    const url = `http://localhost:8080/marcaMedicamento/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/marcaMedicamento/update`;
     return this.http.put<MarcaMedicamento>(url, marcaMedicamento);
   }
   crearMarcaMedicamento(marcaMedicamento: MarcaMedicamento): Observable<MarcaMedicamento> {
-    const url = `http://localhost:8080/marcaMedicamento/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/marcaMedicamento/insert`;
     return this.http.post<MarcaMedicamento>(url, marcaMedicamento);
   }
 
   obtenerTipoMedicamento(): Observable<TipoMedicamento[]> {
-    const url = 'http://localhost:8080/tipoMedicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/tipoMedicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
     return this.http.get<TipoMedicamento[]>(url);
   }
   
   eliminarTipoMedicamento(id: number): Observable<any> {
-    const url = `http://localhost:8080/tipoMedicamento/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/tipoMedicamento/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarTipoMedicamento(tipoMedicamento: TipoMedicamento): Observable<TipoMedicamento> {
-    const url = `http://localhost:8080/tipoMedicamento/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/tipoMedicamento/update`;
     return this.http.put<TipoMedicamento>(url, tipoMedicamento);
   }
   crearTipoMedicamento(tipoMedicamento: TipoMedicamento): Observable<TipoMedicamento> {
-    const url = `http://localhost:8080/tipoMedicamento/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/tipoMedicamento/insert`;
     return this.http.post<TipoMedicamento>(url, tipoMedicamento);
   }
 
   obtenerMedicamento(): Observable<Medicamento[]> {
-    const url = 'http://localhost:8080/medicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
+    const url = 'https://back-endipssaniuis-production.up.railway.app/medicamento/all'; // Reemplaza 'roles' por la ruta correcta de tu endpoint
     return this.http.get<Medicamento[]>(url);
   }
 
   eliminarMedicamento(id: number): Observable<any> {
-    const url = `http://localhost:8080/medicamento/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/medicamento/id/${id}`;
     return this.http.delete(url);
   }
 
   actualizarMedicamento(medicamento: Medicamento): Observable<Medicamento> {
-    const url = `http://localhost:8080/medicamento/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/medicamento/update`;
     return this.http.put<Medicamento>(url, medicamento);
   }
   crearMedicamento(medicamento: Medicamento): Observable<Medicamento> {
-    const url = `http://localhost:8080/medicamento/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/medicamento/insert`;
     return this.http.post<Medicamento>(url, medicamento);
   }
 }

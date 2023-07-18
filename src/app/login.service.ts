@@ -12,6 +12,6 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(correoElectronico: string, contrasena: string): Observable<Usuario> {
-    return this.http.post<Usuario>('http://localhost:8080/usuario/login', { correoElectronico, contrasena });
+    return this.http.post<Usuario>('https://back-endipssaniuis-production.up.railway.app/usuario/login', { correoElectronico, contrasena });
   }
 }

@@ -14,54 +14,54 @@ export class MedicoServiceService {
   constructor(private http: HttpClient) { }
 
   obtenerCitas(id: number): Observable<CitaMedica[]> {
-    const url = `http://localhost:8080/citaMedica/all/medico/id/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/all/medico/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
   obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
-    const url = `http://localhost:8080/citaMedica/all/medico/finalizada/id/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/all/medico/finalizada/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
 
   actualizarTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
-    const url = `http://localhost:8080/tratamiento/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/tratamiento/update`;
     return this.http.put<Tratamiento>(url, tratamiento);
   }
   crearTratamiento(tratamiento: Tratamiento): Observable<Tratamiento> {
-    const url = `http://localhost:8080/tratamiento/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/tratamiento/insert`;
     return this.http.post<Tratamiento>(url, tratamiento);
   }
   obtenerTratamiento(id: number): Observable<Tratamiento> {
-    const url = `http://localhost:8080/tratamiento/idCita/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/tratamiento/idCita/${id}`; 
     return this.http.get<Tratamiento>(url);
   }
 
   obtenerEnfermedades(): Observable<Enfermedad[]> {
-    const url = `http://localhost:8080/enfermedad/all`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/enfermedad/all`; 
     return this.http.get<Enfermedad[]>(url);
   }
 
   obtenerDiagnostico(id: number): Observable<Diagnostico> {
-    const url = `http://localhost:8080/diagnostico/idCita/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/diagnostico/idCita/${id}`; 
     return this.http.get<Diagnostico>(url);
   }
 
   actualizarDiagnostico(diagnostico: Diagnostico): Observable<Diagnostico> {
-    const url = `http://localhost:8080/diagnostico/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/diagnostico/update`;
     return this.http.put<Diagnostico>(url, diagnostico);
   }
   crearDiagnostico(diagnostico: Diagnostico): Observable<Diagnostico> {
-    const url = `http://localhost:8080/diagnostico/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/diagnostico/insert`;
     return this.http.post<Diagnostico>(url, diagnostico);
   }
 
   finalizarCita(citaMedica: CitaMedica): Observable<CitaMedica> {
-    const url = `http://localhost:8080/citaMedica/finalizar`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/finalizar`;
     return this.http.put<CitaMedica>(url, citaMedica);
   }
 
 
   cancelarCita(citaMedica: CitaMedica): Observable<CitaMedica> {
-    const url = `http://localhost:8080/citaMedica/cancelar`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/cancelar`;
     return this.http.put<CitaMedica>(url, citaMedica);
   }
   

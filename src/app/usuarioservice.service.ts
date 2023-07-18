@@ -15,40 +15,40 @@ export class UsuarioserviceService {
   }
 
   obtenerCitas(id: number): Observable<CitaMedica[]> {
-    const url = `http://localhost:8080/citaMedica/all/usuario/id/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/all/usuario/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
 
   eliminarCita(id: number): Observable<any> {
-    const url = `http://localhost:8080/citaMedica/id/${id}`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/id/${id}`;
     return this.http.delete(url);
   }
 
   obtenerMedicosPorEspecialidad(idEspecialidad: number): Observable<Medico[]> {
-    const url = `http://localhost:8080/medico/especialidad/${idEspecialidad}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/medico/especialidad/${idEspecialidad}`; 
     return this.http.get<Medico[]>(url);
   }
 
   obtenerUsuarioPorId(id: number): Observable<Usuario[]> {
-    const url = `http://localhost:8080/usuario/id/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/usuario/id/${id}`; 
     return this.http.get<Usuario[]>(url);
   }
   
   obtenerEspecialidadMedica(): Observable<EspecialidadMedica[]> {
-    const url = `http://localhost:8080/especialidadMedica/all`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/especialidadMedica/all`; 
     return this.http.get<EspecialidadMedica[]>(url);
   }
 
   actualizarCita(citaMedica: CitaMedica): Observable<CitaMedica> {
-    const url = `http://localhost:8080/citaMedica/update`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/update`;
     return this.http.put<CitaMedica>(url, citaMedica);
   }
   crearCita(citaMedica: CitaMedica): Observable<CitaMedica> {
-    const url = `http://localhost:8080/citaMedica/insert`;
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/insert`;
     return this.http.post<CitaMedica>(url, citaMedica);
   }
   obtenerCitasFinalizadas(id: number): Observable<CitaMedica[]> {
-    const url = `http://localhost:8080/citaMedica/all/usuario/finalizada/id/${id}`; 
+    const url = `https://back-endipssaniuis-production.up.railway.app/citaMedica/all/usuario/finalizada/id/${id}`; 
     return this.http.get<CitaMedica[]>(url);
   }
   
